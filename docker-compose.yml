@@ -32,3 +32,9 @@ services:
     depends_on:
       - db
       - redis
+  node:
+    build: ./docker/node
+    working_dir: /usr/src/app
+    command: npm run watch
+    volumes:
+      - .:/usr/src/app
